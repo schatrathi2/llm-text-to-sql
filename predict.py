@@ -39,5 +39,5 @@ def run(adapter_path=None, use_rag=False, out_file="pred.sql"):
     print(f"Wrote {out_file}")
 
 if __name__ == "__main__":
-    # Example: fine-tuned model, no RAG
+    # Example: base model, no RAG
     run(adapter_path="./adapters", use_rag=False, out_file="pred_ft.sql")

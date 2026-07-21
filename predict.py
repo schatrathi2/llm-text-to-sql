@@ -19,13 +19,15 @@ def clean_sql(text):
     text = re.sub(r"```sql|```", "", text).strip()
     return " ".join(text.split())
 
-def run(adapter_path=None, use_rag=False, out_file="pred.sql"):
+def run(adapter_path=None, use_rag=False, out_file="pred.sql", limit=None):
     model, tokenizer = load(
         "mlx-community/Qwen2.5-7B-Instruct-4bit",
         adapter_path=adapter_path,
     )
     with open("spider_data/dev.json") as f:
         rows = json.load(f)
+    if limit is not None:
+        rows = rows[:limit]
 
     with open(out_file, "w") as out:
         for row in rows:
@@ -40,4 +42,4 @@ def run(adapter_path=None, use_rag=False, out_file="pred.sql"):
 
 if __name__ == "__main__":
     # Example: base model, no RAG
-    run(adapter_path=None, use_rag=False, out_file="pred_base.sql")
+    run(adapter_path=None, use_rag=False, out_file="pred_test.sql", limit=5)

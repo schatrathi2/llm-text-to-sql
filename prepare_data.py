@@ -8,7 +8,10 @@ def make_example(row):
     schema = get_schema(row["db_id"])
     user = (
         "You are an expert SQL assistant. Given the database schema below, "
-        "write a single SQL query that answers the question.\n\n"
+        "write a single SQL query that answers the question. "
+        "Return only the SQL, no explanation. "
+        "Use lowercase SQL functions and do not use column or table aliases "
+        "unless necessary. Match this style: SELECT count(*) FROM table\n\n"
         f"Schema:\n{schema}\n\n"
         f"Question: {row['question']}"
     )

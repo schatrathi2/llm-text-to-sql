@@ -15,9 +15,10 @@ def build_prompt(db_id, question, use_rag=False):
     )
 
 def clean_sql(text):
-    """Strip markdown fences and collapse to a single line."""
+    """Strip markdown fences, trailing semicolons, collapse to one line."""
     text = re.sub(r"```sql|```", "", text).strip()
-    return " ".join(text.split())
+    text = " ".join(text.split())
+    return text.rstrip(";").strip()
 
 def run(adapter_path=None, use_rag=False, out_file="pred.sql", limit=None):
     model, tokenizer = load(

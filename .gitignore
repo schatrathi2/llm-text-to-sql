@@ -4,3 +4,4 @@ process_sql.py
 .vscode/
 data/
 __pycache__
+predictions/

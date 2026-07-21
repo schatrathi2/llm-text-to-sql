@@ -41,5 +41,5 @@ def run(adapter_path=None, use_rag=False, out_file="pred.sql", limit=None):
     print(f"Wrote {out_file}")
 
 if __name__ == "__main__":
-    # Example: base model, no RAG
+    # Example: base model, no RAG, limited to 5
     run(adapter_path=None, use_rag=False, out_file="predictions/pred_small.sql", limit=5)

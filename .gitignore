@@ -5,3 +5,4 @@ process_sql.py
 data/
 __pycache__
 predictions/
+gold_small.sql

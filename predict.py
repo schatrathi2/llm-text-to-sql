@@ -42,4 +42,4 @@ def run(adapter_path=None, use_rag=False, out_file="pred.sql", limit=None):
 
 if __name__ == "__main__":
     # Example: base model, no RAG
-    run(adapter_path=None, use_rag=False, out_file="pred_test.sql", limit=5)
+    run(adapter_path=None, use_rag=False, out_file="predictions/pred_test.sql", limit=5)

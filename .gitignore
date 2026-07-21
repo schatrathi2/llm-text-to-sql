@@ -2,3 +2,5 @@ spider_data/
 evaluation.py
 process_sql.py
 .vscode/
+data/
+__pycache__

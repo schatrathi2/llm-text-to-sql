@@ -9,7 +9,9 @@ def build_prompt(db_id, question, use_rag=False):
     return (
         "You are an expert SQL assistant. Given the database schema below, "
         "write a single SQL query that answers the question. "
-        "Return only the SQL, no explanation.\n\n"
+        "Return only the SQL, no explanation. "
+        "Use lowercase SQL functions and do not use column or table aliases "
+        "unless necessary. Match this style: SELECT count(*) FROM table\n\n"
         f"Schema:\n{schema}\n\n"
         f"Question: {question}"
     )
